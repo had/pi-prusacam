@@ -1,0 +1,3 @@
+PRUSACONNECT_URL = "https://webcam.connect.prusa3d.com/c/snapshot"
+FINGERPRINT = "FILLME"
+CAMERA_TOKEN = "FILLME"
