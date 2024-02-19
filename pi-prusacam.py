@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-from prusacamconfig import PRUSACONNECT_URL, FINGERPRINT, CAMERA_TOKEN
+from prusacamconfig import PRUSACONNECT_URL, FINGERPRINT, CAMERA_TOKEN, PRUSACONNECT_TIMEOUT_S
 import requests
 
 def push_to_prusaconnect(jpg_image):
@@ -11,7 +11,8 @@ def push_to_prusaconnect(jpg_image):
             "fingerprint": FINGERPRINT,
             "token": CAMERA_TOKEN,
         },
-        data=jpg_image
+        data=jpg_image,
+        timeout=PRUSACONNECT_TIMEOUT_S
     )
     if response.status_code != 204:
         print(response.content)
